@@ -5,7 +5,7 @@ function addItem()
   var newItem;
   newItem = document.getElementById("price").number();
   if (newItem != "isNaN") {
-    alert("Enter price as a number"); 
+    alert("Enter price as a number");  
 }
 
 
