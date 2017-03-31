@@ -13,7 +13,7 @@ function addItem()
   runningTotal += newItem;
   dollars = asCurrency((Number(runningTotal));
   document.getElementById("price").value = " ";
-  document.getElementById("dollars").innerHTML = dollars;
+  document.getElementById("subtotal").innerHTML = dollars;
 
 }
 
