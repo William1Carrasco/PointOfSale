@@ -3,16 +3,20 @@ var runningTotal = 0.0;
 function addItem()
 {
   var newItem;
-  newItem = document.getElementById("price").value = "";
-  if(isNaN(newItem) == true) {
-    alert("Enter price as a number");
+  var dollars;
+  newItem = document.getElementById("price").value;
+  if(isNaN(newItem)) {
+    alert("Enter price as a number")
 }
  else{
-  newItem = number();
-  var runningTotal += newItem;
-  var dollars;
-  dollars = asCurrency(runningTotal);
+  newItem = number(newItem);
+  runningTotal += newItem;
+  dollars = asCurrency((Number(runningTotal));
+  document.getElementById("price").value = " ";
+  document.getElementById("subtotal").innerHTML = dollars;
+
 }
+
 //IF newItem is not a number
  // THEN show an alert: "Enter price as a number"
  //OTHERWISE,
@@ -53,3 +57,15 @@ function getCookie(cname) {
     }
     return "";
 }
+function calculateReceipt()
+{
+   var receiptTax;
+   var receiptSubtotal;
+   var receiptTotal;
+   receiptSubtotal = getCookie("preTax");
+   receiptTotal = (Number(receiptSubtotal) + Number(receiptTax));
+   receiptTax = receiptSubtotal * .075;
+   document.getElementById("tot").innerHTML = asCurrency(Number(receiptTotal));
+   document.getElementById("sub").innerHTML = asCurrency(Number(receiptSubtotal));
+   document.getElementById("tax").innerHTML = asCurrency(Number(receiptTax));
+ }
