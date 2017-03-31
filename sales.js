@@ -3,12 +3,12 @@ var runningTotal = 0.0;
 function addItem()
 {
   var newItem;
-  newItem = document.getElementById("price").value;
+  newItem = document.getElementById("price").value = "";
   if(isNaN(newItem) == true) {
     alert("Enter price as a number");
 }
  else{
-  newItem = number(newItem);
+  newItem = number();
   var runningTotal += newItem;
   var dollars;
   dollars = asCurrency(runningTotal);
